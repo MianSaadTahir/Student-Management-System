@@ -47,13 +47,18 @@ void writeStudentName();
 void writeStudentUserName();
 void writeStudentPass();
 void writeStudentClass();
+void writeStudentFee();
+void writeStudentAttendance();
+void writeStudentSubjects();
+void writeStudentResult();
+
 // file deleting functions
 void removeStudentName();
 void removeStudentID();
 void removestudentPass();
-void removestudentFees();
-void removestudentAttendance();
 void removeStudentClass();
+void removeStudentFee();
+void removeStudentAttendance();
 void validateAttendance(int newAttendance);
 
 string setcolor(unsigned short); // for using colors
@@ -67,7 +72,7 @@ string newMarks2 = "0";
 string newMarks3 = "0";
 string studentMarks[3] = {"0", "0", "0"}; // student's marks
 
-string adminID = "admin", adminPass = "123";                                                          // admin credentials
+string adminID = "admin", adminPass = "123";                                                       // admin credentials
 string CHECKstudentID = " ";                                                                       // input student's username
 string studentID = " ", studentPass = " ", studentName = " ", studentFees = "Nill", newFees = " "; // student's credentials
 string usernameSignIn = " ", passwordSignIn = " ";                                                 // input username and password
@@ -1165,6 +1170,22 @@ bool loadStudentPass()
     getline(loadFile, studentPass);
     loadFile.close();
 }
+
+bool loadStudentClass()
+{
+    fstream loadFile;
+    loadFile.open("studentClass.txt", ios::in);
+    if (!loadFile.is_open())
+    {
+        x = 74, y = 25;
+        gotoxy(x, y);
+        setcolor(4);
+        cerr << "Error opening file";
+        return true;
+    }
+    getline(loadFile, classOption);
+    loadFile.close();
+}
 void writeStudentName()
 {
     fstream writeFile;
@@ -1193,6 +1214,20 @@ void writeStudentClass()
     writeFile << classOption;
     writeFile.close();
 }
+void writeStudentFee()
+{
+    fstream writeFile;
+    writeFile.open("studentFee.txt", ios::out);
+    writeFile << studentFees;
+    writeFile.close();
+}
+void writeStudentAttendance()
+{
+    fstream writeFile;
+    writeFile.open("studentAttendance.txt", ios::out);
+    writeFile << studentAttendance;
+    writeFile.close();
+}
 void removeStudentName()
 {
     fstream removeFile;
@@ -1211,6 +1246,29 @@ void removestudentPass()
 {
     fstream removeFile;
     removeFile.open("studentPass.txt", ios::out);
+    removeFile << studentID;
+    removeFile.close();
+}
+
+void removeStudentClass()
+{
+    fstream removeFile;
+    removeFile.open("studentClass.txt", ios::out);
+    removeFile << studentID;
+    removeFile.close();
+}
+void removeStudentFee()
+{
+    fstream removeFile;
+    removeFile.open("studentFee.txt", ios::out);
+    removeFile << studentID;
+    removeFile.close();
+}
+
+void removeStudentAttendace()
+{
+    fstream removeFile;
+    removeFile.open("studentAttendance.txt", ios::out);
     removeFile << studentID;
     removeFile.close();
 }
