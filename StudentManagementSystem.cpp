@@ -42,6 +42,10 @@ void addNewMarks3();
 bool loadAdminPass();
 bool loadStudentID();
 bool loadStudentPass();
+bool loadStudentClass();
+bool loadStudentFee();
+bool loadStudentAttendance();
+
 // file writing functions
 void writeStudentName();
 void writeStudentUserName();
@@ -59,8 +63,8 @@ void removestudentPass();
 void removeStudentClass();
 void removeStudentFee();
 void removeStudentAttendance();
-void validateAttendance(int newAttendance);
 
+void validateAttendance(int newAttendance);
 string setcolor(unsigned short); // for using colors
 int x, y;                        // coordinates for gotoxy
 int studentCount = 0;            // number of students
@@ -93,6 +97,16 @@ bool admin = true;    // admin loop condition
 bool user = true;     // user loop condition
 main()
 {
+    loadAdminPass();
+    loadStudentID();
+    loadStudentPass();
+    loadStudentClass();
+    loadStudentFee();
+    loadStudentAttendance();
+    if (loadStudentID() && loadStudentPass())
+    {
+        studentCount = 1; // number of students
+    }
     string choice;        // input choice
     string adminOption;   // input admin choice
     string studentOption; // input student choice
@@ -100,7 +114,6 @@ main()
     while (mainLoop)
     {
         clearScreen();
-        loadAdminPass();
         {
             if (loadAdminPass() == true)
             {
@@ -108,7 +121,6 @@ main()
                 break;
             }
         }
-        loadStudentID();
         {
             if (loadStudentID() == true)
             {
@@ -116,7 +128,6 @@ main()
                 break;
             }
         }
-        loadStudentPass();
         {
             if (loadStudentPass() == true)
             {
@@ -610,6 +621,7 @@ void changeClass()
         getch();
         clearScreen();
         changeClass();
+        writeStudentClass();
     }
 }
 void updateMarks()
@@ -770,6 +782,7 @@ void updateAttendance()
         setcolor(5);
         cout << "Attendance updated!";
         gotoxy(x + 1, y + 6);
+        writeStudentAttendance();
         pressTOgoBACK();
     }
     else
@@ -937,6 +950,8 @@ void addStudent()
     writeStudentUserName();
     writeStudentPass();
     writeStudentClass();
+    writeStudentFee();
+    writeStudentAttendance();
 }
 void removeStudent()
 {
@@ -962,9 +977,9 @@ void removeStudent()
     removeStudentName();
     removeStudentID();
     removestudentPass();
-    // removestudentFees();
-    // removestudentAttendance();
-    // removeStudentClass();
+    removeStudentClass();
+    removeStudentFee();
+    removeStudentAttendance();
     // removeStudentMarks();
 }
 void alreadyExists()
@@ -990,7 +1005,7 @@ void viewStudent()
     cout << R"(Name    Class    Fee Status    Attendance(out of 365)    Subjects     Marks(out of 10))";
     gotoxy(45, 30);
     setcolor(6);
-    cout << studentName;
+    cout << studentID;
     gotoxy(55, 30);
     cout << classOption;
     gotoxy(64, 30);
@@ -1186,6 +1201,46 @@ bool loadStudentClass()
     getline(loadFile, classOption);
     loadFile.close();
 }
+
+bool loadStudentFee()
+{
+    fstream loadFile;
+    loadFile.open("studentFee.txt", ios::in);
+    if (!loadFile.is_open())
+    {
+        x = 74, y = 25;
+        gotoxy(x, y);
+        setcolor(4);
+        cerr << "Error opening file";
+        return true;
+    }
+    getline(loadFile, studentFees);
+    loadFile.close();
+}
+
+bool loadStudentAttendance()
+{
+    std::fstream loadFile; // Use std::fstream for file operations
+    loadFile.open("studentAttendance.txt", std::ios::in);
+
+    if (!loadFile.is_open())
+    {
+        int x = 74, y = 25; // Make sure x and y are defined if you use them
+        gotoxy(x, y);       // Assuming gotoxy is defined somewhere
+        setcolor(4);        // Assuming setcolor is defined somewhere
+        std::cerr << "Error opening file" << std::endl;
+        return true; // Return true or false based on your logic
+    }
+
+    std::string line; // Use a string to read the line first
+    if (std::getline(loadFile, line))
+    {                                        // Read the line from the file
+        studentAttendance = std::stoi(line); // Convert the string to an integer
+    }
+
+    loadFile.close();
+    return false; // Return false to indicate success (adjust based on your logic)
+}
 void writeStudentName()
 {
     fstream writeFile;
@@ -1265,7 +1320,7 @@ void removeStudentFee()
     removeFile.close();
 }
 
-void removeStudentAttendace()
+void removeStudentAttendance()
 {
     fstream removeFile;
     removeFile.open("studentAttendance.txt", ios::out);
