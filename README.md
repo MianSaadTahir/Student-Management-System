@@ -38,7 +38,7 @@
 3. Launch the `StudentManagementSystem.exe` file.
 
 ## Documentation
-For a detailed overview of the gameplay mechanics and features, refer to the [Documentation](./documentation) in the repository.
+For a detailed overview of the project, refer to the [Documentation](./documentation) in the repository.
 
 ## Technologies Used
 - C++
