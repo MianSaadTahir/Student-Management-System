@@ -607,6 +607,7 @@ void changeClass()
         gotoxy(73, 31);
         setcolor(5);
         cout << "Class updated successfully!";
+        writeStudentClass();
         gotoxy(73, 32);
         pressTOgoBACK();
     }
@@ -1044,6 +1045,7 @@ void updateFees()
         setcolor(5);
         cout << "Fee status updated";
         gotoxy(x + 1, y + 6);
+        writeStudentFee();
         pressTOgoBACK();
     }
     else
