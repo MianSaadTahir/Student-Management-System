@@ -1374,7 +1374,7 @@ void printHeader()
 )";
 
     gotoxy(74, 23);
-    cout << "School Management System";
+    cout << "Student Management System";
     gotoxy(73, 24);
     cout << "==========================";
 }
