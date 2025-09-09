@@ -11,10 +11,10 @@ A command-line interface (CLI) based application developed in C++. It allows two
 - [Contributing](#contributing)
 
 ## Features
-- Admin can add, remove, and view student records, update student class marks, attendance, and fee status.
-- Student can view class subjects, marks, attendance, and fee status.  
-- Distinct roles for Admin and Student to ensure proper access control.
-- Efficient handling of student data for improved organizational efficiency.
+- Admin can add, remove, and view student records, update student class marks, attendance, and fee status
+- Student can view class subjects, marks, attendance, and fee status
+- Distinct roles for Admin and Student to ensure proper access control
+- Efficient handling of student data for improved organizational efficiency
 
 
 ## Screenshots
@@ -29,10 +29,11 @@ For a detailed overview of the project, refer to the [Documentation](./documenta
 
 ## Technologies Used
 - C++
+  
 ## Usage
 1. Clone the repository:
    `git clone https://github.com/miansaadtahir/StudentManagementSystem.git`
-2. Launch the `StudentManagementSystem.exe` file.
+2. Launch the `StudentManagementSystem.exe` file
 
 ## Contributing
 Contributions, issues, and feature requests are welcome!  
