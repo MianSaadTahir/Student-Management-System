@@ -1,26 +1,20 @@
 # Student Management System
 
-**Student Management System** is a command-line interface (CLI) based application developed in C++. It allows two types of users—Admin and Student—to interact with the system. Admins can efficiently manage student records by adding, removing, and viewing student information, as well as updating their class marks, attendance, and fee status. Students can view their class subjects, marks, attendance, and fee status. This system provides a streamlined approach to student management, enhancing organizational efficiency and user experience.
+A command-line interface (CLI) based application developed in C++. It allows two types of users—Admin and Student—to interact with the system. Admins can efficiently manage student records by adding, removing, and viewing student information, as well as updating their class marks, attendance, and fee status. Students can view their class subjects, marks, attendance, and fee status.
 
 ## Table of Contents
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Usage](#usage)
 - [Documentation](#documentation)
 - [Technologies Used](#technologies-used)
+- [Usage](#usage)
 - [Contributing](#contributing)
 
 ## Features
-- **Admin Capabilities**: 
-  - Add, remove, and view student records.
-  - Update student class marks, attendance, and fee status.
-  - Change admin password for secure access.
-  
-- **Student Access**: 
-  - View class subjects, marks, attendance, and fee status.
-  
-- **User Management**: Distinct roles for Admin and Student to ensure proper access control.
-- **Data Management**: Efficient handling of student data for improved organizational efficiency.
+- Admin can add, remove, and view student records, update student class marks, attendance, and fee status.
+- Student can view class subjects, marks, attendance, and fee status.  
+- Distinct roles for Admin and Student to ensure proper access control.
+- Efficient handling of student data for improved organizational efficiency.
 
 
 ## Screenshots
@@ -29,18 +23,16 @@
 <img src="assets/3.png" alt="Screenshot" width="75%">
 <img src="assets/4.png" alt="Screenshot" width="75%">
 
-## Usage
-1. Clone the repository:
-   `git clone https://github.com/miansaadtahir/StudentManagementSystem.git`
-2. Navigate to the project directory:
-   `cd StudentManagementSystem`
-3. Launch the `StudentManagementSystem.exe` file.
 
 ## Documentation
 For a detailed overview of the project, refer to the [Documentation](./documentation) in the repository.
 
 ## Technologies Used
 - C++
+## Usage
+1. Clone the repository:
+   `git clone https://github.com/miansaadtahir/StudentManagementSystem.git`
+2. Launch the `StudentManagementSystem.exe` file.
 
 ## Contributing
 Contributions, issues, and feature requests are welcome!  
