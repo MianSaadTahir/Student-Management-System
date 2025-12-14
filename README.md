@@ -9,7 +9,7 @@ A command-line interface (CLI) based application developed in C++. It allows two
 - [Technologies Used](#technologies-used)
 - [Usage](#usage)
 - [Contributing](#contributing)
-
+- [License](#license)
 ## Features
 - Admin can add, remove, and view student records, update student class marks, attendance, and fee status
 - Student can view class subjects, marks, attendance, and fee status
@@ -38,3 +38,8 @@ For a detailed overview of the project, refer to the [Documentation](./documenta
 ## Contributing
 Contributions, issues, and feature requests are welcome!  
 Feel free to check out the [issues page](https://github.com/miansaadtahir/StudentManagementSystem/issues) for more information.
+
+
+## License
+
+This project is open source and available under the MIT [License](https://github.com/MianSaadTahir/Student-Management-System/blob/main/LICENSE).
