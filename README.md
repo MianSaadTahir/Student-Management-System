@@ -37,7 +37,7 @@ For a detailed overview of the project, refer to the [Documentation](./documenta
 
 ## Contributing
 Contributions, issues, and feature requests are welcome!  
-Feel free to check out the [issues page](https://github.com/miansaadtahir/StudentManagementSystem/issues) for more information.
+Feel free to check out the [issues page](https://github.com/miansaadtahir/StudentManagementSystem/issues).
 
 
 ## License
